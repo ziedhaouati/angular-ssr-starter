@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SCM') {
             steps {
-              git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
+              git branch: 'SP2', url: 'https://github.com/ziedhaouati/angular-ssr-starter.git'
             }
         }
         stage('Install node modules') {
