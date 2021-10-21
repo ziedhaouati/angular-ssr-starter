@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-               sh "npm install"
+              git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
             }
         }
         stage('Test') {
