@@ -6,7 +6,7 @@ pipeline {
               git branch: 'SP2', url: 'https://github.com/ziedhaouati/angular-ssr-starter.git'
             }
         }
-        stage('Install node modules') {
+        stage('Install') {
             steps {
                 sh "npm install"
             }
