@@ -9,8 +9,4 @@ node {
         stage('Build'){
                 sh "npm run build:ssr"
         }
-        stage('Deploy'){
-                sh "sudo npm install pm2 -g"
-                sh "pm2 restart all"
-        }
 }
