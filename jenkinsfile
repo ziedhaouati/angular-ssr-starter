@@ -1,20 +1,15 @@
-pipeline {
-    agent any
-    stages {
-        stage('Install') {
-            steps {
+node {
+        stage('Checkout SCM'){
+                git branch: 'SP2', url: 'git@github.com:kalyan11021980/angular-ssr-starter.git'
+        }
+
+        stage('Install node modules'){
                 sh "npm install"
-            }
         }
-        stage('Build') {
-            steps {
+        stage('Build'){
                 sh "npm run build:ssr"
-            }
         }
-         stage('Deploy') {
-            steps {
-                 sh "pm2 restart all"
-            }
+        stage('Deploy'){
+                sh "pm2 restart all"
         }
-    }
 }
