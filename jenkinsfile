@@ -5,12 +5,12 @@ node {
 
         stage('Install node modules'){
                 sh "npm install"
-                echo "test"
         }
         stage('Build'){
                 sh "npm run build:ssr"
         }
         stage('Deploy'){
+                sh "npm install pm2 -g"
                 sh "pm2 restart all"
         }
 }
